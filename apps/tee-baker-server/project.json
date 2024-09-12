@@ -1,0 +1,26 @@
+{
+  "name": "tee-baker-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tee-baker-server/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "tee-baker-server:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "tee-baker-server:build:development"
+        },
+        "production": {
+          "buildTarget": "tee-baker-server:build:production"
+        }
+      }
+    }
+  }
+}

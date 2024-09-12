@@ -16,7 +16,6 @@
     "@nx/jest": "19.7.2",
     "@nx/js": "19.7.2",
     "@nx/react": "19.7.2",
-    "@nx/react-native": "19.7.2",
     "@nx/vite": "19.7.2",
     "@nx/web": "19.7.2",
     "@swc-node/register": "~1.9.1",
