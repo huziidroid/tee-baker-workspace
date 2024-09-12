@@ -1,0 +1,15 @@
+{
+  "name": "tee-baker-web",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {
+    "react": "*",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "15.0.6",
+    "@types/react-dom": "18.3.0"
+  }
+}
