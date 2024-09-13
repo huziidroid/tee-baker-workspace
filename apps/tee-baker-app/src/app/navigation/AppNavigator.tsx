@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, Theme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { SCREENS } from './constants';
@@ -8,9 +8,14 @@ import { NavigationService } from '../services';
 
 const Stack = createNativeStackNavigator();
 
-const AppNavigator = () => {
+interface IAppNavigatorProps {
+  theme?: Theme;
+}
+const AppNavigator = (props: IAppNavigatorProps) => {
+  const { theme } = props;
+
   return (
-    <NavigationContainer ref={NavigationService.navigationRef}>
+    <NavigationContainer ref={NavigationService.navigationRef} theme={theme}>
       <Stack.Navigator>
         <Stack.Screen name={SCREENS.HOME} component={HomeScreen} />
       </Stack.Navigator>
