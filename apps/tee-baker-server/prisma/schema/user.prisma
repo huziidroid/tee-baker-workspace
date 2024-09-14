@@ -1,3 +1,9 @@
+enum Gender {
+    Male
+    Female
+    Other
+}
+
 model User {
     id          String   @id @default(uuid())
     full_name   String
@@ -8,17 +14,11 @@ model User {
     bio         String?
     profile_url String?
     password    String
-    is_active   Boolean  @default(true)
-    is_super    Boolean  @default(false)
+    is_active   Boolean? @default(true)
+    is_super    Boolean? @default(false)
     created_at  DateTime @default(now())
     updated_at  DateTime @updatedAt
 
     @@unique([user_name, email])
     @@map("users")
-}
-
-enum Gender {
-    Male
-    Female
-    Other
 }

@@ -12,8 +12,8 @@ CREATE TABLE "users" (
     "bio" TEXT,
     "profile_url" TEXT,
     "password" TEXT NOT NULL,
-    "is_active" BOOLEAN NOT NULL DEFAULT true,
-    "is_super" BOOLEAN NOT NULL DEFAULT false,
+    "is_active" BOOLEAN DEFAULT true,
+    "is_super" BOOLEAN DEFAULT false,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
 
