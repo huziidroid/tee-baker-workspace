@@ -21,7 +21,10 @@ CREATE TABLE "users" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "users_user_name_key" ON "users"("user_name");
+CREATE UNIQUE INDEX "users_user_name_key" ON "users"("user_name" DESC);
 
 -- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "users_user_name_email_key" ON "users"("user_name", "email");

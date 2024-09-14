@@ -6,7 +6,7 @@
     "db-up": "dotenv -e .env.development -- docker compose up dev-db -d",
     "db-down": "dotenv -e .env.development -- docker compose rm dev-db -s -f -v",
     "migrate": "dotenv -e .env.development npx prisma migrate deploy",
-    "create-migrate": "dotenv -e .env.development npx prisma migrate dev",
+    "create-migration": "dotenv -e .env.development npx prisma migrate dev",
     "db-seed": "dotenv -e .env.development npx prisma db seed",
     "db-restart": "nx run tee-baker-server:db-down && nx run tee-baker-server:db-up && sleep 1 && nx run tee-baker-server:migrate"
   },

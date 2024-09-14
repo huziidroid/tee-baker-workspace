@@ -1,7 +1,7 @@
 model User {
     id          String   @id @default(uuid())
     full_name   String
-    user_name   String   @unique
+    user_name   String   @unique(sort: Desc)
     email       String   @unique
     gender      Gender
     dob         DateTime
@@ -13,6 +13,7 @@ model User {
     created_at  DateTime @default(now())
     updated_at  DateTime @updatedAt
 
+    @@unique([user_name, email])
     @@map("users")
 }
 
