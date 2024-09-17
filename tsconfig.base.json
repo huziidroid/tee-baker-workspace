@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      // "@tee-baker-app/*": ["apps/tee-baker-app/src/*"],
+      // "@tee-baker-server/*": ["apps/tee-baker-server/src/*"],
+      // "@tee-baker-web/*": ["apps/tee-baker-web/src/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

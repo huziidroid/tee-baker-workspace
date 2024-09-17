@@ -5,7 +5,13 @@
     "module": "commonjs",
     "types": ["node"],
     "emitDecoratorMetadata": true,
-    "target": "es2021"
+    "target": "es2021",
+    "baseUrl": "./src",
+    "paths": {
+      "@modules/*": ["app/modules/*"],
+      "@common/*": ["app/common/*"],
+      "@shared/*": ["app/shared/*"]
+    }
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "include": ["src/**/*.ts"]

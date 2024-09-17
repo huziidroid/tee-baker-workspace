@@ -5,20 +5,33 @@
 
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { AppModule } from './app/app.module';
-import { ResponseFormatInterceptor } from './app/common/interceptors';
+import { ResponseFormatInterceptor } from 'app/shared/interceptors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
-  app.useGlobalInterceptors(new ResponseFormatInterceptor());
+  const GLOBAL_PREFIX = 'v1/api';
 
-  const globalPrefix = 'v1/api';
-  app.setGlobalPrefix(globalPrefix);
+  app
+    .useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }))
+    .useGlobalInterceptors(new ResponseFormatInterceptor())
+    .setGlobalPrefix(GLOBAL_PREFIX);
+
+  // Swagger docs setup
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('Tee baker')
+    .setDescription('APIs documentation for tee-baer server')
+    .setVersion('1.0')
+    // .setBasePath(GLOBAL_PREFIX)
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('docs', app, document, { useGlobalPrefix: true });
+
   const port = process.env.PORT || 3000;
   await app.listen(port);
-  Logger.log(`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`);
+  Logger.log(`🚀 Application is running on: http://localhost:${port}/${GLOBAL_PREFIX}`);
 }
 
 bootstrap();
