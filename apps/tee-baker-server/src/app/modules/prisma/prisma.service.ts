@@ -7,7 +7,7 @@ export class PrismaService extends PrismaClient {
   constructor(private readonly config: ConfigService) {
     super({
       datasources: { db: { url: config.get('DATABASE_URL') } },
-      log: ['query'],
+      log: ['query', 'error', 'warn'],
     });
   }
 }

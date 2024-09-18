@@ -9,12 +9,14 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { AppModule } from './app/app.module';
 import { ResponseFormatInterceptor } from 'app/shared/interceptors';
+import { RequestLoggerMiddleware } from '@shared/middlewares';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const GLOBAL_PREFIX = 'v1/api';
 
   app
+    .use(new RequestLoggerMiddleware().use)
     .useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }))
     .useGlobalInterceptors(new ResponseFormatInterceptor())
     .setGlobalPrefix(GLOBAL_PREFIX);
