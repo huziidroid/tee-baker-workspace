@@ -10,6 +10,6 @@ import { SecurityModule } from '@shared/modules';
 
 @Module({
   providers: [{ provide: APP_GUARD, useClass: AuthGaurd }],
-  imports: [PrismaModule, AuthModule, SecurityModule, ConfigModule.forRoot({ isGlobal: true })],
+  imports: [PrismaModule, ConfigModule.forRoot({ isGlobal: true }), SecurityModule, AuthModule],
 })
 export class AppModule {}

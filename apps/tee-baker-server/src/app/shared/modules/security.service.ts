@@ -14,13 +14,11 @@ export class SecurityService {
 
   async createAccessToken(userId: string, email: string) {
     const payload = { sub: userId, email };
-    return this.jwtService.signAsync(payload);
+    return await this.jwtService.signAsync(payload);
   }
 
   async verifyAccessToken(token: string) {
-    const payload = await this.jwtService.verifyAsync<JwtPayloadType>(token, {
-      secret: this.config.get('SECRET_KEY'),
-    });
+    const payload = await this.jwtService.verifyAsync<JwtPayloadType>(token);
     return payload;
   }
 
