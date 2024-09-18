@@ -1,24 +1,15 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule } from '@nestjs/config';
 
-import { PrismaModule } from './modules/prisma/prisma.module';
-import { AuthModule } from './modules/auth/auth.module';
+import { APP_GUARD } from '@nestjs/core';
+
+import { AuthModule } from '@modules/auth/auth.module';
+import { PrismaModule } from '@modules/prisma/prisma.module';
+import { AuthGaurd } from '@shared/guards';
+import { SecurityModule } from '@shared/modules';
 
 @Module({
-  imports: [
-    PrismaModule,
-    AuthModule,
-    JwtModule.registerAsync({
-      global: true,
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (configService: ConfigService) => ({
-        secret: configService.get<string>('SECRET_KEY'), // Fetching SECRET from environment variables
-        signOptions: { expiresIn: '15m' },
-      }),
-    }),
-    ConfigModule.forRoot({ isGlobal: true }),
-  ],
+  providers: [{ provide: APP_GUARD, useClass: AuthGaurd }],
+  imports: [PrismaModule, AuthModule, SecurityModule, ConfigModule.forRoot({ isGlobal: true })],
 })
 export class AppModule {}

@@ -3,21 +3,21 @@ import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/co
 import { PrismaService } from '@modules/prisma/prisma.service';
 import { LoginDTO } from './dtos/login.dto';
 import { AUTH_ERROR_MESSAGES } from './constants';
-import { HashingService } from '@shared/services/HashingService';
+import { SecurityService } from '@shared/modules/security.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly prismaService: PrismaService, private readonly hashingService: HashingService) {}
+  constructor(private readonly prismaService: PrismaService, private readonly securityService: SecurityService) {}
   async login(body: LoginDTO) {
     const { email, password } = body;
 
     const userFound = await this.prismaService.user.findUnique({ where: { email } });
     if (!userFound) throw new NotFoundException(AUTH_ERROR_MESSAGES.userNotFound);
 
-    const passwordMatched = await this.hashingService.verifyHashedPassword(userFound.password, password);
+    const passwordMatched = await this.securityService.verifyHashedPassword(userFound.password, password);
     if (!passwordMatched) throw new UnauthorizedException(AUTH_ERROR_MESSAGES.unauthorizesAccess);
 
-    const accessToken = await this.hashingService.createAccessToken(userFound.id, email);
+    const accessToken = await this.securityService.createAccessToken(userFound.id, email);
     return accessToken;
   }
 }

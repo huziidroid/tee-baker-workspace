@@ -9,7 +9,7 @@ type JwtPayloadType = {
 };
 
 @Injectable()
-export class HashingService {
+export class SecurityService {
   constructor(private readonly jwtService: JwtService, private readonly config: ConfigService) {}
 
   async createAccessToken(userId: string, email: string) {
