@@ -27,10 +27,10 @@ export class UsersService {
 
   async findOneById(id: string) {
     try {
-      const user = await this.prismaService.user.findFirst({ where: { id } });
+      const user = await this.prismaService.user.findFirstOrThrow({ where: { id } });
       return user;
     } catch (error) {
-      if (error instanceof PrismaClientKnownRequestError && error.code === 'P2001') {
+      if (error instanceof PrismaClientKnownRequestError && error.code === 'P2025') {
         throw new NotFoundException(USER_MODULE_ERRORS.userNotFoundById(id));
       }
       throw new InternalServerErrorException(error);
@@ -39,12 +39,22 @@ export class UsersService {
 
   async findOneByEmail(email: string) {
     try {
-      const user = await this.prismaService.user.findFirst({ where: { email } });
+      const user = await this.prismaService.user.findFirstOrThrow({ where: { email } });
+
       return user;
     } catch (error) {
-      if (error instanceof PrismaClientKnownRequestError && error.code === 'P2001') {
+      if (error instanceof PrismaClientKnownRequestError && error.code === 'P2025') {
         throw new NotFoundException(USER_MODULE_ERRORS.userNotFoundByEmail(email));
       }
+      throw new InternalServerErrorException(error);
+    }
+  }
+
+  async findAllUsers() {
+    try {
+      const users = await this.prismaService.user.findMany();
+      return users;
+    } catch (error) {
       throw new InternalServerErrorException(error);
     }
   }
