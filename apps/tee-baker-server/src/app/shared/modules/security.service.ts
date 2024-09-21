@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import * as argon from 'argon2';
 
@@ -10,7 +9,7 @@ type JwtPayloadType = {
 
 @Injectable()
 export class SecurityService {
-  constructor(private readonly jwtService: JwtService, private readonly config: ConfigService) {}
+  constructor(private readonly jwtService: JwtService) {}
 
   async createAccessToken(userId: string, email: string) {
     const payload = { sub: userId, email };

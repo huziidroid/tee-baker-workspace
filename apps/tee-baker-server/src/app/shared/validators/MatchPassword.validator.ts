@@ -1,0 +1,29 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { registerDecorator, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator';
+
+// Step 1: Create the constraint class
+@ValidatorConstraint({ async: false })
+export class MatchPasswordConstraint implements ValidatorConstraintInterface {
+  validate(confirmPassword: string, args: ValidationArguments) {
+    const [relatedPropertyName] = args.constraints;
+    const password = args.object[relatedPropertyName];
+    return confirmPassword === password; // Check if confirmPassword matches password
+  }
+
+  defaultMessage(_: ValidationArguments) {
+    return 'Password and confirm password do not match';
+  }
+}
+
+// Step 2: Create the custom decorator
+export function MatchPassword(property: string, validationOptions?: ValidationOptions) {
+  return (object: any, propertyName: string) => {
+    registerDecorator({
+      target: object.constructor,
+      propertyName: propertyName,
+      options: validationOptions,
+      constraints: [property],
+      validator: MatchPasswordConstraint,
+    });
+  };
+}

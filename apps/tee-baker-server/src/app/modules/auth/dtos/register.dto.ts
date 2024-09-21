@@ -1,36 +1,13 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { Gender } from '@prisma/client';
-import { IsDateString, IsEmail, IsIn, IsNotEmpty, IsString } from 'class-validator';
+import { ApiProperty, PickType } from '@nestjs/swagger';
+import { IsNotEmpty, IsString } from 'class-validator';
 
-export class RegisterDTO {
+import { CreateUserDTO } from '@modules/users/dtos/createUser.dto';
+import { MatchPassword } from '@shared/validators';
+
+export class RegisterDTO extends PickType(CreateUserDTO, ['full_name', 'user_name', 'email', 'gender', 'dob', 'password'] as const) {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
-  full_name: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  user_name: string;
-
-  @ApiProperty()
-  @IsEmail()
-  @IsNotEmpty()
-  @IsString()
-  email: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsIn(['male', 'female', 'other'])
-  gender: Gender;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsDateString()
-  dob: Date;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  password: string;
+  @MatchPassword('password')
+  confirmPassword: string;
 }
