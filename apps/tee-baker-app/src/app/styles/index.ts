@@ -6,6 +6,7 @@ import { useAppTheme } from '@/assets';
 export const makeStyles = (colors: ReactNativePaper.ThemeColors) =>
   StyleSheet.create({
     flex1: { flex: 1 },
+    row: { flexDirection: 'row', alignItems: 'center' },
   });
 
 export const useGlobalStyles = () => {

@@ -8,10 +8,7 @@ type AsyncStorageDataType = Record<string, unknown> | string;
  * @param {string} storageKey
  */
 
-export const setData = async <T = AsyncStorageDataType>(
-  data: T,
-  storageKey: string
-) => {
+export const setData = async <T = AsyncStorageDataType>(data: T, storageKey: string) => {
   try {
     if (typeof data === 'string') {
       await AsyncStorage.setItem(storageKey, data);
@@ -30,16 +27,10 @@ export const setData = async <T = AsyncStorageDataType>(
  * @returns {AsyncStorageDataType} data
  */
 
-export const getData = async <T = AsyncStorageDataType>(
-  storageKey: string
-): Promise<T> => {
+export const getData = async <T = AsyncStorageDataType>(storageKey: string): Promise<T> => {
   try {
     const data = await AsyncStorage.getItem(storageKey);
-    return data !== null
-      ? typeof data === 'string'
-        ? data
-        : JSON.parse(data)
-      : null;
+    return data !== null ? (typeof data === 'string' ? data : JSON.parse(data)) : null;
   } catch (error: unknown) {
     return Promise.reject(error);
   }

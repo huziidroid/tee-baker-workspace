@@ -1,4 +1,32 @@
-import { MD3LightTheme, MD3DarkTheme, useTheme } from 'react-native-paper';
+import { MD3LightTheme, MD3DarkTheme, useTheme, configureFonts } from 'react-native-paper';
+
+export const URBANIST_FONTS = {
+  thin: 'Poppins-Thin',
+  regular: 'Poppins-Regular',
+  medium: 'Poppins-SemiBold',
+  bold: 'Poppins-Bold',
+  'italic-thin': 'Poppins-ThinItalic',
+  'italic-regular': 'Poppins-Italic',
+  'italic-medium': 'Poppins-MediumItalic',
+  'italic-bold': 'Poppins-LightItalic',
+};
+
+const fontsConfigurations = configureFonts({
+  config: {
+    fontSize: 16,
+    fontFamily: URBANIST_FONTS.regular,
+    ...({
+      thin: { fontFamily: URBANIST_FONTS.thin, fontWeight: '300' },
+      regular: { fontFamily: URBANIST_FONTS.regular, fontWeight: '400' },
+      bold: { fontFamily: URBANIST_FONTS.bold, fontWeight: '700' },
+      medium: { fontFamily: URBANIST_FONTS.medium, fontWeight: '600' },
+      'italic-regular': { fontFamily: URBANIST_FONTS['italic-regular'], fontWeight: '400' },
+      'italic-thin': { fontFamily: URBANIST_FONTS['italic-thin'], fontWeight: '300' },
+      'italic-medium': { fontFamily: URBANIST_FONTS['italic-medium'], fontWeight: '600' },
+      'italic-bold': { fontFamily: URBANIST_FONTS['italic-bold'], fontWeight: '700' },
+    } as const),
+  },
+});
 
 export const AppLightTheme = {
   ...MD3LightTheme,
@@ -44,6 +72,7 @@ export const AppLightTheme = {
     onSurfaceDisabled: 'rgba(28, 27, 31, 0.38)',
     backdrop: 'rgba(49, 47, 56, 0.4)',
   },
+  fonts: fontsConfigurations,
 };
 
 export const AppDarkTheme = {
@@ -90,6 +119,7 @@ export const AppDarkTheme = {
     onSurfaceDisabled: 'rgba(229, 225, 230, 0.38)',
     backdrop: 'rgba(49, 47, 56, 0.4)',
   },
+  fonts: fontsConfigurations,
 };
 
 export type AppThemeType = typeof AppLightTheme | typeof AppDarkTheme;
