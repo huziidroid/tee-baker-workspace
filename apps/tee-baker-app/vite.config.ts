@@ -4,24 +4,12 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import * as esbuild from 'esbuild';
 import { readFileSync } from 'fs';
 
-const extensions = [
-  '.mjs',
-  '.web.tsx',
-  '.tsx',
-  '.web.ts',
-  '.ts',
-  '.web.jsx',
-  '.jsx',
-  '.web.js',
-  '.js',
-  '.css',
-  '.json',
-];
+const extensions = ['.mjs', '.web.tsx', '.tsx', '.web.ts', '.ts', '.web.jsx', '.jsx', '.web.js', '.js', '.css', '.json'];
 
 const rollupPlugin = (matchers: RegExp[]) => ({
   name: 'js-in-jsx',
   load(id: string) {
-    if (matchers.some((matcher) => matcher.test(id)) && id.endsWith('.js')) {
+    if (matchers.some(matcher => matcher.test(id)) && id.endsWith('.js')) {
       const file = readFileSync(id, { encoding: 'utf-8' });
       return esbuild.transformSync(file, { loader: 'jsx', jsx: 'automatic' });
     }
@@ -39,6 +27,7 @@ export default defineConfig({
     extensions,
     alias: {
       'react-native': 'react-native-web',
+      '@/': new URL('./src/app', import.meta.url).pathname,
     },
   },
 

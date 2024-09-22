@@ -93,5 +93,6 @@ export const AppDarkTheme = {
 };
 
 export type AppThemeType = typeof AppLightTheme | typeof AppDarkTheme;
+export type ThemeColorsType = typeof AppLightTheme.colors | typeof AppDarkTheme.colors;
 
 export const useAppTheme = () => useTheme<AppThemeType>();

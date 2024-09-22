@@ -1,10 +1,7 @@
 module.exports = function (api) {
   api.cache(true);
 
-  if (
-    process.env.NX_TASK_TARGET_TARGET === 'build' ||
-    process.env.NX_TASK_TARGET_TARGET.includes('storybook')
-  ) {
+  if (process.env.NX_TASK_TARGET_TARGET === 'build' || process.env.NX_TASK_TARGET_TARGET.includes('storybook')) {
     return {
       presets: [
         [
@@ -18,8 +15,23 @@ module.exports = function (api) {
   }
 
   return {
-    presets: [
-      ['module:@react-native/babel-preset', { useTransformReactJSX: true }],
+    presets: [['module:@react-native/babel-preset', { useTransformReactJSX: true }]],
+    plugins: [
+      [
+        'module-resolver',
+        {
+          root: ['.'],
+          alias: {
+            '@/assets': './src/app/assets',
+            '@/components': './src/app/components',
+            '@/navigation': './src/app/navigation',
+            '@/screens': './src/app/screens',
+            '@/services': './src/app/services',
+            '@/styles': './src/app/styles',
+            '@/types': './src/app/types',
+          },
+        },
+      ],
     ],
     env: {
       production: {

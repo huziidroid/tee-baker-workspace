@@ -9,7 +9,7 @@
     "run-ios": {
       "executor": "@nx/react-native:run-ios",
       "options": {
-        "simulator": "iPhone 15 Pro (iOS 17.5)"
+        "simulator": "iPhone 16 Pro"
       }
     }
   }

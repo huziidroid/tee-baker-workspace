@@ -1,6 +1,1 @@
-export {
-  AppThemeType,
-  AppDarkTheme,
-  AppLightTheme,
-  useAppTheme,
-} from './theme';
+export { AppThemeType, AppDarkTheme, AppLightTheme, useAppTheme, ThemeColorsType } from './theme';
