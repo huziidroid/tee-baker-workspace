@@ -5,7 +5,7 @@ import { AppButton, AppText } from '@/components';
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={{ padding: 20 }}>
       <Text>HomeScreen</Text>
       <AppButton title="Press me" mode="contained" />
       <AppText variant="italic-medium" size={19}>

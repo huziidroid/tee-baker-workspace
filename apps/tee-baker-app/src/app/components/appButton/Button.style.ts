@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 import { useStyles } from '@/styles';
-import { URBANIST_FONTS } from '@/assets/theme';
 
 export const useButtonStyles = ({ alignIconToRight }: { alignIconToRight: boolean }) =>
   useStyles(
@@ -10,13 +9,10 @@ export const useButtonStyles = ({ alignIconToRight }: { alignIconToRight: boolea
         height: 50,
         flexDirection: alignIconToRight ? 'row-reverse' : 'row',
       },
-      buttonStyles: {
-        borderRadius: 20,
-      },
+      buttonStyles: {},
       labelStyle: {
         fontSize: 16,
-        fontWeight: '700',
-        fontFamily: URBANIST_FONTS.bold,
+        fontWeight: '600',
       },
     }),
   );
