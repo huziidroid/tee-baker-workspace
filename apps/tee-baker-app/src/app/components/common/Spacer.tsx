@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import React, { PropsWithChildren } from 'react';
 
 import { useAppTheme } from '@/assets';
@@ -11,27 +11,31 @@ export interface ISpacerProps {
   horizontal?: number;
   vertical?: number;
   flex?: number;
+  style?: StyleProp<ViewStyle>;
   color?: ReactNativePaper.ThemeColorsKeys;
 }
 
 const Spacer = (props: PropsWithChildren<ISpacerProps>) => {
-  const { bottom, flex, horizontal, left, right, top, vertical, children, color = 'transparent' } = props;
+  const { bottom, flex, horizontal, left, right, top, vertical, children, color = 'transparent', style } = props;
 
   const { colors } = useAppTheme();
   const backgroundColor = colors[color] as string;
 
   return (
     <View
-      style={{
-        flex,
-        marginBottom: bottom,
-        marginTop: top,
-        marginRight: right,
-        marginLeft: left,
-        marginHorizontal: horizontal,
-        marginVertical: vertical,
-        backgroundColor,
-      }}>
+      style={StyleSheet.flatten([
+        {
+          flex,
+          marginBottom: bottom,
+          marginTop: top,
+          marginRight: right,
+          marginLeft: left,
+          marginHorizontal: horizontal,
+          marginVertical: vertical,
+          backgroundColor,
+        },
+        style,
+      ])}>
       {children}
     </View>
   );

@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { NavigationService } from '@/services';
 import { SCREENS } from './constants';
-import { HomeScreen } from '@/screens';
+import { HomeScreen, LandingScreen } from '@/screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,8 @@ const AppNavigator = (props: IAppNavigatorProps) => {
 
   return (
     <NavigationContainer ref={NavigationService.navigationRef} theme={theme}>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={SCREENS.LANDING} component={LandingScreen} />
         <Stack.Screen name={SCREENS.HOME} component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

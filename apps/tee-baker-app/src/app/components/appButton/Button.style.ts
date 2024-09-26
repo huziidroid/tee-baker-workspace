@@ -7,9 +7,12 @@ export const useButtonStyles = ({ alignIconToRight }: { alignIconToRight: boolea
     StyleSheet.create({
       contentStyles: {
         height: 50,
+        width: '100%',
         flexDirection: alignIconToRight ? 'row-reverse' : 'row',
       },
-      buttonStyles: {},
+      buttonStyles: {
+        borderRadius: 50,
+      },
       labelStyle: {
         fontSize: 16,
         fontWeight: '600',

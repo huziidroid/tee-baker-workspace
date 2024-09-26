@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
 import { adaptNavigationTheme, PaperProvider } from 'react-native-paper';
 import { DefaultTheme as NavigationLightTheme, DarkTheme as NavigationDarkTheme } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { AppNavigator } from '@/navigation';
 import { AppDarkTheme, AppLightTheme } from '@/assets';
@@ -16,9 +17,11 @@ const App = () => {
   const navigationTheme = useMemo(() => (isDark ? DarkTheme : LightTheme), [isDark]);
 
   return (
-    <PaperProvider theme={paperTheme}>
-      <AppNavigator theme={navigationTheme} />
-    </PaperProvider>
+    <SafeAreaProvider>
+      <PaperProvider theme={paperTheme}>
+        <AppNavigator theme={navigationTheme} />
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 };
 

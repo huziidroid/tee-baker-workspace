@@ -37,7 +37,7 @@ const AppText = (props: PropsWithChildren<AppTextProps>) => {
           <Then>
             <View style={styles.row}>
               <Spacer right={2}>{leftAccessory}</Spacer>
-              <PaperText variant={variant} style={styles.appText} numberOfLines={numberOfLines} {...textProps}>
+              <PaperText {...textProps} variant={variant} style={[styles.appText, textProps?.style]} numberOfLines={numberOfLines}>
                 {children}
               </PaperText>
               <Spacer left={2}>{rightAccessory}</Spacer>
@@ -47,7 +47,7 @@ const AppText = (props: PropsWithChildren<AppTextProps>) => {
           <Else>
             <TouchableOpacity style={styles.row} onPress={onPress} activeOpacity={0.6}>
               <Spacer right={2}>{leftAccessory}</Spacer>
-              <PaperText variant={variant} style={styles.appText} numberOfLines={numberOfLines} {...textProps}>
+              <PaperText {...textProps} variant={variant} style={[styles.appText, textProps?.style]} numberOfLines={numberOfLines}>
                 {children}
               </PaperText>
               <Spacer left={2}>{rightAccessory}</Spacer>

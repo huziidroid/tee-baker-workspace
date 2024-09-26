@@ -24,14 +24,17 @@ module.exports = function (api) {
           alias: {
             '@/assets': './src/app/assets',
             '@/components': './src/app/components',
+            '@/icons': './src/app/icons',
             '@/navigation': './src/app/navigation',
             '@/screens': './src/app/screens',
             '@/services': './src/app/services',
             '@/styles': './src/app/styles',
             '@/types': './src/app/types',
+            '@/utils': './src/app/utils',
           },
         },
       ],
+      ['module:react-native-dotenv'],
     ],
     env: {
       production: {
