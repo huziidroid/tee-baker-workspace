@@ -4,18 +4,16 @@ import { APP_NAME } from '@env';
 
 import { useLandingStyles } from './Landing.style';
 import { AppIcon } from '@/icons';
-import { AppButton, AppText, LoginOptionButton, ScreenWrapper, Spacer } from '@/components';
+import { AppButton, AppText, LoginOptionButton, ScreenWrapper, SignupText, Spacer } from '@/components';
 import { LOGIN_OPTIONS } from './Landing.utils';
+import { NavigationService } from '@/services';
+import { SCREENS } from '@/navigation/constants';
 
 const LandingScreen = () => {
   const styles = useLandingStyles();
 
   const onPressLoginWithPassword = () => {
-    //
-  };
-
-  const onPressSignup = () => {
-    //
+    NavigationService.navigate(SCREENS.SING_IN);
   };
 
   return (
@@ -40,18 +38,7 @@ const LandingScreen = () => {
 
       <Spacer horizontal={20} flex={0.25}>
         <AppButton title="Sign in with password" mode="contained" onPress={onPressLoginWithPassword} />
-
-        {/* Don't have an account section */}
-        <Spacer top={40} style={styles.alignCenter}>
-          <AppText size={14}>
-            Don't have an account?{' '}
-            <Spacer top={-2}>
-              <AppText variant="medium" size={14} color="primary" onPress={onPressSignup}>
-                Sign up
-              </AppText>
-            </Spacer>
-          </AppText>
-        </Spacer>
+        <SignupText />
       </Spacer>
     </ScreenWrapper>
   );

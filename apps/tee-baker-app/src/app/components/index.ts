@@ -5,3 +5,4 @@ export { default as AppTextInput } from './formComponents/appTextInput/AppTextIn
 export { default as EmailTextInput } from './formComponents/emailInput/EmailTextInput';
 export { default as ScreenWrapper } from './common/ScreenWrapper/ScreenWrapper';
 export { default as LoginOptionButton } from './loginOptionButton/LoginOptionButton';
+export { default as SignupText } from './signupText/SignupText';
