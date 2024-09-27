@@ -1,6 +1,8 @@
-import { useAppTheme } from '@/assets';
-import { useStyles } from '@/styles';
 import { StyleSheet } from 'react-native';
+
+import { useAppTheme } from '@/assets';
+
+import { useStyles } from '@/styles';
 
 export const useLoginOptionButtonStyles = () => {
   const { colors } = useAppTheme();

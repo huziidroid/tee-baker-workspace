@@ -1,5 +1,5 @@
-import { View, ScrollViewProps, ViewProps, ScrollView, StyleSheet } from 'react-native';
 import React, { PropsWithChildren, useMemo } from 'react';
+import { ScrollView, ScrollViewProps, StyleSheet, View, ViewProps } from 'react-native';
 import { KeyboardAwareScrollView, KeyboardAwareScrollViewProps } from 'react-native-keyboard-aware-scroll-view';
 
 import { useScreenWrapperStyles } from './ScreenWrapper.style';

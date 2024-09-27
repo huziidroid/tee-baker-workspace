@@ -1,7 +1,7 @@
-import { View, Text } from 'react-native';
 import React from 'react';
+import { Text, View } from 'react-native';
 
-import { AppButton, AppTextInput, Spacer, EmailTextInput } from '@/components';
+import { AppButton, AppTextInput, EmailTextInput, Spacer } from '@/components';
 
 const HomeScreen = () => {
   return (

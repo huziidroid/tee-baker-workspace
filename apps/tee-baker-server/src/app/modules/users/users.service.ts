@@ -1,10 +1,12 @@
-import { PrismaService } from '@modules/prisma/prisma.service';
 import { ForbiddenException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
+import { PrismaService } from '@modules/prisma/prisma.service';
+
+import { SecurityService } from '@shared/modules/security.service';
+
 import { CreateUserDTO } from './dtos/createUser.dto';
 import { USER_MODULE_ERRORS } from './utils/errorMessages';
-import { SecurityService } from '@shared/modules/security.service';
 
 @Injectable()
 export class UsersService {

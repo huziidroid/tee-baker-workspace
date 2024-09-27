@@ -1,5 +1,5 @@
-import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import React, { PropsWithChildren } from 'react';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
 import { useAppTheme } from '@/assets';
 

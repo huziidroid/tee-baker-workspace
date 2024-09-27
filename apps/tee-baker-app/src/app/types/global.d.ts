@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
-
 import { AppThemeType, ThemeColorsType } from '@/assets';
 
 declare global {

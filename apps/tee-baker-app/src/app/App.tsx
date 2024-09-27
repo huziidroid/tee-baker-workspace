@@ -1,11 +1,12 @@
+import { DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationLightTheme } from '@react-navigation/native';
 import React, { useMemo } from 'react';
 import { useColorScheme } from 'react-native';
-import { adaptNavigationTheme, PaperProvider } from 'react-native-paper';
-import { DefaultTheme as NavigationLightTheme, DarkTheme as NavigationDarkTheme } from '@react-navigation/native';
+import { PaperProvider, adaptNavigationTheme } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { AppNavigator } from '@/navigation';
 import { AppDarkTheme, AppLightTheme } from '@/assets';
+
+import { AppNavigator } from '@/navigation';
 
 const { DarkTheme, LightTheme } = adaptNavigationTheme({ reactNavigationDark: NavigationDarkTheme, reactNavigationLight: NavigationLightTheme });
 

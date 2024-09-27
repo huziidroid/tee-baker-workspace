@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
 
-import { useStyles } from '@/styles';
 import { useAppTheme } from '@/assets';
 import { URBANIST_FONTS } from '@/assets/theme';
+
+import { useStyles } from '@/styles';
 
 export const useAppTextInputStyles = ({ isFlat }: { isFlat: boolean }) => {
   const { colors } = useAppTheme();

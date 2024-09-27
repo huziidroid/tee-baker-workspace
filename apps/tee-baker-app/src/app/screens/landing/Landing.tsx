@@ -1,13 +1,17 @@
-import { View } from 'react-native';
-import React from 'react';
 import { APP_NAME } from '@env';
+import React from 'react';
+import { View } from 'react-native';
+
+import { AppButton, AppText, LoginOptionButton, ScreenWrapper, SignupText, Spacer } from '@/components';
+
+import { AppIcon } from '@/icons';
+
+import { SCREENS } from '@/navigation/constants';
+
+import { NavigationService } from '@/services';
 
 import { useLandingStyles } from './Landing.style';
-import { AppIcon } from '@/icons';
-import { AppButton, AppText, LoginOptionButton, ScreenWrapper, SignupText, Spacer } from '@/components';
 import { LOGIN_OPTIONS } from './Landing.utils';
-import { NavigationService } from '@/services';
-import { SCREENS } from '@/navigation/constants';
 
 const LandingScreen = () => {
   const styles = useLandingStyles();

@@ -1,9 +1,9 @@
-import { TouchableOpacity } from 'react-native';
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
-import { useLoginOptionButtonStyles } from './LoginOptionButton.style';
 import AppText from '../appText/AppText';
 import Spacer from '../common/Spacer';
+import { useLoginOptionButtonStyles } from './LoginOptionButton.style';
 
 interface LoginOptionButtonProps {
   variant?: 'default' | 'only-icon';

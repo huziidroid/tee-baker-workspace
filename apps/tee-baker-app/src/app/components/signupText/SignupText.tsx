@@ -1,10 +1,13 @@
 import React from 'react';
 
-import Spacer from '../common/Spacer';
-import AppText from '../appText/AppText';
-import { useStyles } from '@/styles';
-import { NavigationService } from '@/services';
 import { SCREENS } from '@/navigation/constants';
+
+import { NavigationService } from '@/services';
+
+import { useStyles } from '@/styles';
+
+import AppText from '../appText/AppText';
+import Spacer from '../common/Spacer';
 
 const SignupText = () => {
   const styles = useStyles();

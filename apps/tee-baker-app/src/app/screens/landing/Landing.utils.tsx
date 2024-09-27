@@ -1,4 +1,4 @@
-import { FacebookIcon, GoogleIcon, AppleIcon, TwitterIcon } from '@/components/svgIcons';
+import { AppleIcon, FacebookIcon, GoogleIcon, TwitterIcon } from '@/components/svgIcons';
 
 export const LOGIN_OPTIONS = [
   {

@@ -1,19 +1,20 @@
 import React from 'react';
+import { Image, ImageProps } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome5, { Omit } from 'react-native-vector-icons/FontAwesome5';
 import Foundation from 'react-native-vector-icons/Foundation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Entypo from 'react-native-vector-icons/Entypo';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import Octicons from 'react-native-vector-icons/Octicons';
-import FontAwesome5, { Omit } from 'react-native-vector-icons/FontAwesome5';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
-import { VectorIconType } from '@/types';
 import { APP_IMAGES, useAppTheme } from '@/assets';
-import { Image, ImageProps } from 'react-native';
+
+import { VectorIconType } from '@/types';
 
 type SpecificIconType = Omit<VectorIconType, 'name' | 'iconType'>;
 type ImageIconProps = Omit<ImageProps, 'src' | 'source'>;

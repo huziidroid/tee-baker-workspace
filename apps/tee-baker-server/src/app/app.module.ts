@@ -3,9 +3,10 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 
 import { AuthModule } from '@modules/auth/auth.module';
-import { PrismaModule } from '@modules/prisma/prisma.module';
-import { SecurityModule } from '@shared/modules';
 import { JwtAuthGuard } from '@modules/auth/guards/jwt.guard';
+import { PrismaModule } from '@modules/prisma/prisma.module';
+
+import { SecurityModule } from '@shared/modules';
 
 @Module({
   providers: [{ provide: APP_GUARD, useClass: JwtAuthGuard }],

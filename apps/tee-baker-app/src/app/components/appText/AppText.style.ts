@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 import { useAppTheme } from '@/assets';
-import { AppTextProps } from './AppText.type';
+
 import { useStyles } from '@/styles';
+
+import { AppTextProps } from './AppText.type';
 
 export const useAppTextStyles = (
   props: Omit<AppTextProps, 'onPress' | 'leftAccessory' | 'rightAccessory' | 'isLoading' | 'numberOfLines' | 'textProps' | 'variant'>,

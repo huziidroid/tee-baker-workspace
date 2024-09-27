@@ -1,8 +1,9 @@
 import { StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
+import { useAppTheme } from '@/assets';
 
 import { useStyles } from '@/styles';
-import { useAppTheme } from '@/assets';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export const useScreenWrapperStyles = ({ color }: { color: ReactNativePaper.ThemeColorsKeys }) => {
   const { colors } = useAppTheme();

@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
 import { useMemo } from 'react';
+import { StyleSheet } from 'react-native';
 
 import { useAppTheme } from '@/assets';
 

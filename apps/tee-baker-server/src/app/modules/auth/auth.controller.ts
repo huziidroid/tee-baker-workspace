@@ -1,6 +1,6 @@
+import { Public } from '@/shared/decorators';
 import { Body, Controller, Post } from '@nestjs/common';
 
-import { Public } from 'app/shared/decorators';
 import { AuthService } from './auth.service';
 import { LoginDTO } from './dtos/login.dto';
 import { RegisterDTO } from './dtos/register.dto';

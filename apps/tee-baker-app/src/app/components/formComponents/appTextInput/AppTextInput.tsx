@@ -1,12 +1,12 @@
-import { View } from 'react-native';
 import React from 'react';
-import { TextInput as PaperTextInput } from 'react-native-paper';
 import { Else, If, Then, When } from 'react-if';
+import { View } from 'react-native';
+import { TextInput as PaperTextInput } from 'react-native-paper';
 
-import { AppTextInputProps } from './AppTextInput.type';
 import AppText from '../../appText/AppText';
-import { useAppTextInputStyles } from './AppTextInput.style';
 import Spacer from '../../common/Spacer';
+import { useAppTextInputStyles } from './AppTextInput.style';
+import { AppTextInputProps } from './AppTextInput.type';
 
 const AppTextInput = (props: AppTextInputProps) => {
   const { flex, width, mode = 'flat', label, isRequired, ...rest } = props;

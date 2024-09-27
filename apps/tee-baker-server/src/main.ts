@@ -2,14 +2,14 @@
  * This is not a production server yet!
  * This is only a minimal backend to get started.
  */
-
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+
+import { ResponseFormatInterceptor } from '@shared/interceptors';
+import { RequestLoggerMiddleware } from '@shared/middlewares';
 
 import { AppModule } from './app/app.module';
-import { ResponseFormatInterceptor } from 'app/shared/interceptors';
-import { RequestLoggerMiddleware } from '@shared/middlewares';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

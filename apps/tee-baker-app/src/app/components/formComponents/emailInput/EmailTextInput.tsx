@@ -1,9 +1,10 @@
 import React from 'react';
-import { AppTextInputProps } from '../appTextInput/AppTextInput.type';
-import AppTextInput from '../appTextInput/AppTextInput';
+import { TextInput } from 'react-native-paper';
 
 import { useAppTheme } from '@/assets';
-import { TextInput } from 'react-native-paper';
+
+import AppTextInput from '../appTextInput/AppTextInput';
+import { AppTextInputProps } from '../appTextInput/AppTextInput.type';
 
 const EmailTextInput = (props: Omit<AppTextInputProps, 'right' | 'keyboardType'>) => {
   const { mode = 'flat', ...rest } = props;

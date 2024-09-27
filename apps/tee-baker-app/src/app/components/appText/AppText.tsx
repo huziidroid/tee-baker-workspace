@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from 'react';
-import { View, TouchableOpacity } from 'react-native';
 import { Else, If, Then } from 'react-if';
+import { TouchableOpacity, View } from 'react-native';
 import { customText } from 'react-native-paper';
 
-import { AppTextProps, AppTextVariants } from './AppText.type';
 import Spacer from '../common/Spacer';
 import { useAppTextStyles } from './AppText.style';
+import { AppTextProps, AppTextVariants } from './AppText.type';
 
 const PaperText = customText<AppTextVariants>();
 

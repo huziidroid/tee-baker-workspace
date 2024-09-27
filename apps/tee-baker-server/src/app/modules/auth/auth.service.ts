@@ -1,10 +1,12 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import * as R from 'ramda';
 
-import { LoginDTO } from './dtos/login.dto';
-import { SecurityService } from '@shared/modules/security.service';
-import { RegisterDTO } from './dtos/register.dto';
 import { UsersService } from '@modules/users/users.service';
+
+import { SecurityService } from '@shared/modules/security.service';
+
+import { LoginDTO } from './dtos/login.dto';
+import { RegisterDTO } from './dtos/register.dto';
 
 @Injectable()
 export class AuthService {

@@ -1,4 +1,4 @@
-import { MD3LightTheme, MD3DarkTheme, useTheme, configureFonts } from 'react-native-paper';
+import { MD3DarkTheme, MD3LightTheme, configureFonts, useTheme } from 'react-native-paper';
 
 export const URBANIST_FONTS = {
   thin: 'Poppins-Thin',
