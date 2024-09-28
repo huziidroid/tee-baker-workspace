@@ -1,4 +1,4 @@
-import { HomeScreen } from '@/screens';
+import { DiscoverScreen, HomeScreen, ProfileScreen } from '@/screens';
 
 import { BottomTabConfigType } from '@/types';
 
@@ -10,5 +10,17 @@ export const APP_BOTTOM_TABS: BottomTabConfigType[] = [
     component: HomeScreen,
     name: SCREENS.HOME,
     icon: { type: 'Feather', name: 'home' },
+  },
+  {
+    label: 'Discover',
+    component: DiscoverScreen,
+    name: SCREENS.DISCOVER,
+    icon: { type: 'Feather', name: 'compass' },
+  },
+  {
+    label: 'Profile',
+    component: ProfileScreen,
+    name: SCREENS.PROFILE,
+    icon: { type: 'Ionicons', name: 'person-outline' },
   },
 ];

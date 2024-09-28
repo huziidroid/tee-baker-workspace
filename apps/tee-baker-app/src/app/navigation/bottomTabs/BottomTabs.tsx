@@ -13,7 +13,10 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
-    <Tab.Navigator screenOptions={{ header: AppHeader }} safeAreaInsets={{ bottom: isIOS ? 8 : 0 }} tabBar={props => <BottomTabBar {...props} />}>
+    <Tab.Navigator
+      screenOptions={{ header: AppHeader }}
+      safeAreaInsets={{ bottom: isIOS ? 8 : 0 }}
+      tabBar={props => <BottomTabBar descriptors={props.descriptors} insets={props.insets} navigation={props.navigation} state={props.state} />}>
       {APP_BOTTOM_TABS.map((tab, index) => {
         return (
           <Tab.Screen

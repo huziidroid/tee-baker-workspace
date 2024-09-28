@@ -6,7 +6,6 @@ import { Appbar } from 'react-native-paper';
 
 import { AppText } from '@/components';
 
-import { SCREENS } from '../constants';
 import { getHeaderConfig } from './config';
 
 const AppHeader = (props: BottomTabHeaderProps | NativeStackHeaderProps) => {
@@ -18,7 +17,7 @@ const AppHeader = (props: BottomTabHeaderProps | NativeStackHeaderProps) => {
     <>
       <StatusBar barStyle={'dark-content'} translucent />
       <Appbar.Header mode="center-aligned">
-        {options.headerLeft ? options.headerLeft({ canGoBack: route.name !== SCREENS.HOME }) : leftAccessory}
+        {options.headerLeft ? options.headerLeft({ canGoBack: false }) : leftAccessory}
         <Appbar.Content
           title={
             typeof title === 'string' ? (

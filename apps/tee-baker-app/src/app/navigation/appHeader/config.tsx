@@ -21,6 +21,16 @@ export const getHeaderConfig = (route: string): HeaderConfigType => {
         leftAccessory: <AppIconForHeader />,
         title: 'Artify',
       };
+    case SCREENS.PROFILE:
+      return {
+        leftAccessory: <AppIconForHeader />,
+        title: 'Profile',
+      };
+    case SCREENS.DISCOVER:
+      return {
+        leftAccessory: <AppIconForHeader />,
+        title: 'Discover',
+      };
     case SCREENS.SIGN_UP:
     case SCREENS.SING_IN:
       return {

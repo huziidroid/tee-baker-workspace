@@ -1,6 +1,6 @@
 import { DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationLightTheme } from '@react-navigation/native';
 import React, { useMemo } from 'react';
-import { useColorScheme } from 'react-native';
+import { LogBox, useColorScheme } from 'react-native';
 import { PaperProvider, adaptNavigationTheme } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -9,6 +9,8 @@ import { AppDarkTheme, AppLightTheme } from '@/assets';
 import AppNavigationContainer from './navigation';
 
 const { DarkTheme, LightTheme } = adaptNavigationTheme({ reactNavigationDark: NavigationDarkTheme, reactNavigationLight: NavigationLightTheme });
+
+LogBox.ignoreLogs(['A props object containing a "key" prop is being spread into JSX']);
 
 const App = () => {
   const colorScheme = useColorScheme();
