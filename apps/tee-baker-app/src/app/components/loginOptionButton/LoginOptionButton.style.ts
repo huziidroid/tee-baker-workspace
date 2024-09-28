@@ -6,6 +6,7 @@ import { useStyles } from '@/styles';
 
 export const useLoginOptionButtonStyles = () => {
   const { colors } = useAppTheme();
+
   return useStyles(
     StyleSheet.create({
       content: {
@@ -17,6 +18,13 @@ export const useLoginOptionButtonStyles = () => {
         borderWidth: 0.4,
         borderRadius: 50,
         borderColor: colors.outline,
+      },
+      icon: {
+        width: '15%',
+        alignItems: 'flex-end',
+      },
+      label: {
+        width: '55%',
       },
     }),
   );

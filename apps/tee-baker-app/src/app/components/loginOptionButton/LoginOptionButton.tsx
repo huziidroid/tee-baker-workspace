@@ -20,10 +20,16 @@ const LoginOptionButton = (props: LoginOptionButtonProps) => {
   if (variant === 'default')
     return (
       <TouchableOpacity style={styles.content} onPress={onPress} activeOpacity={0.6}>
-        {icon && <Spacer right={16}>{icon}</Spacer>}
-        <AppText variant="medium" size={14}>
-          {label}
-        </AppText>
+        {icon && (
+          <Spacer right={16} style={styles.icon}>
+            {icon}
+          </Spacer>
+        )}
+        <Spacer style={styles.label}>
+          <AppText variant="medium" size={14} textAlign="center">
+            {label}
+          </AppText>
+        </Spacer>
       </TouchableOpacity>
     );
 
