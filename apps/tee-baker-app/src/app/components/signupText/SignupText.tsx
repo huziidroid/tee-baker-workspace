@@ -6,8 +6,8 @@ import { NavigationService } from '@/services';
 
 import { useStyles } from '@/styles';
 
-import AppText from '../appText/AppText';
 import Spacer from '../common/Spacer';
+import AppText from '../common/appText/AppText';
 
 const SignupText = () => {
   const styles = useStyles();

@@ -1,4 +1,5 @@
 export enum SCREENS {
+  APP_STACK = 'APP_STACK',
   LANDING = 'LANDING',
   HOME = 'HOME',
   SIGN_UP = 'SIGN_UP',

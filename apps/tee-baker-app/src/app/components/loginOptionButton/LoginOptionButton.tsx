@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
-import AppText from '../appText/AppText';
 import Spacer from '../common/Spacer';
+import AppText from '../common/appText/AppText';
 import { useLoginOptionButtonStyles } from './LoginOptionButton.style';
 
 interface LoginOptionButtonProps {

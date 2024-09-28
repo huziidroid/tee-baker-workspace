@@ -21,3 +21,10 @@ export type SVGIconType = {
   height?: string;
   width?: string;
 };
+
+export type BottomTabConfigType = {
+  label: string;
+  name: string;
+  component: () => JSX.Element;
+  icon: { type: IconType; name: string };
+};

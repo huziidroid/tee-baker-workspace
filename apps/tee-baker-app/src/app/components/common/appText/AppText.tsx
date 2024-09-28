@@ -3,7 +3,7 @@ import { Else, If, Then } from 'react-if';
 import { TouchableOpacity, View } from 'react-native';
 import { customText } from 'react-native-paper';
 
-import Spacer from '../common/Spacer';
+import Spacer from '../Spacer';
 import { useAppTextStyles } from './AppText.style';
 import { AppTextProps, AppTextVariants } from './AppText.type';
 

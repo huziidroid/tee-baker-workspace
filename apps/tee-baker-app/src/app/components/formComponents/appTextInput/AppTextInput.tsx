@@ -3,7 +3,8 @@ import { Else, If, Then, When } from 'react-if';
 import { View } from 'react-native';
 import { TextInput as PaperTextInput } from 'react-native-paper';
 
-import AppText from '../../appText/AppText';
+import AppText from '@/components/common/appText/AppText';
+
 import Spacer from '../../common/Spacer';
 import { useAppTextInputStyles } from './AppTextInput.style';
 import { AppTextInputProps } from './AppTextInput.type';

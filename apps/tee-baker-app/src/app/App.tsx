@@ -6,7 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { AppDarkTheme, AppLightTheme } from '@/assets';
 
-import { AppNavigator } from '@/navigation';
+import AppNavigationContainer from './navigation';
 
 const { DarkTheme, LightTheme } = adaptNavigationTheme({ reactNavigationDark: NavigationDarkTheme, reactNavigationLight: NavigationLightTheme });
 
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
       <PaperProvider theme={paperTheme}>
-        <AppNavigator theme={navigationTheme} />
+        <AppNavigationContainer theme={navigationTheme} />
       </PaperProvider>
     </SafeAreaProvider>
   );
