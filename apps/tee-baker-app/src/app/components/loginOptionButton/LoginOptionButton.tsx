@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import Spacer from '../common/Spacer';
 import AppText from '../common/appText/AppText';
@@ -34,7 +34,12 @@ const LoginOptionButton = (props: LoginOptionButtonProps) => {
     );
 
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  if (variant === 'only-icon') return <></>;
+  if (variant === 'only-icon')
+    return (
+      <TouchableOpacity style={styles.onlyIconView} onPress={onPress} activeOpacity={0.6}>
+        {icon && icon}
+      </TouchableOpacity>
+    );
 };
 
 export default LoginOptionButton;

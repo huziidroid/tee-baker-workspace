@@ -39,21 +39,24 @@ const ScreenWrapper = (props: PropsWithChildren<IScreenWrapperProps>) => {
 
   if (type === 'none')
     return (
-      <View style={[styles.view, safeAreaStyles]} {...viewProps}>
+      <View style={[styles.view, styles.horizontalSpacing, safeAreaStyles]} {...viewProps}>
         {children}
       </View>
     );
 
   if (type === 'scroll')
     return (
-      <ScrollView style={[styles.scroll, safeAreaStyles]} {...scrollViewProps}>
+      <ScrollView style={[styles.scroll, safeAreaStyles]} contentContainerStyle={styles.horizontalSpacing} {...scrollViewProps}>
         {children}
       </ScrollView>
     );
 
   if (type === 'keyboard')
     return (
-      <KeyboardAwareScrollView style={[styles.scroll, safeAreaStyles]} {...keyboardAwareScrollViewProps}>
+      <KeyboardAwareScrollView
+        style={[styles.scroll, safeAreaStyles]}
+        contentContainerStyle={styles.horizontalSpacing}
+        {...keyboardAwareScrollViewProps}>
         {children}
       </KeyboardAwareScrollView>
     );

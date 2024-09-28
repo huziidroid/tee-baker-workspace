@@ -10,8 +10,9 @@ import { SCREENS } from '@/navigation/constants';
 
 import { NavigationService } from '@/services';
 
+import { LOGIN_OPTIONS } from '@/utils';
+
 import { useLandingStyles } from './Landing.style';
-import { LOGIN_OPTIONS } from './Landing.utils';
 
 const LandingScreen = () => {
   const styles = useLandingStyles();

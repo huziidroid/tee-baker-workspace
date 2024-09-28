@@ -1,7 +1,7 @@
 import React from 'react';
 import { Else, If, Then, When } from 'react-if';
 import { View } from 'react-native';
-import { TextInput as PaperTextInput } from 'react-native-paper';
+import { HelperText, TextInput as PaperTextInput } from 'react-native-paper';
 
 import AppText from '@/components/common/appText/AppText';
 
@@ -10,7 +10,7 @@ import { useAppTextInputStyles } from './AppTextInput.style';
 import { AppTextInputProps } from './AppTextInput.type';
 
 const AppTextInput = (props: AppTextInputProps) => {
-  const { flex, width, mode = 'flat', label, isRequired, ...rest } = props;
+  const { flex, width, mode = 'flat', label, isRequired, error, helperText, helperTextProps, ...rest } = props;
 
   const isFlat = mode === 'flat';
   const styles = useAppTextInputStyles({ isFlat });
@@ -44,8 +44,13 @@ const AppTextInput = (props: AppTextInputProps) => {
         contentStyle={styles.contentStyle}
         outlineStyle={styles.outlineStyle}
         label={!isFlat ? label : ''}
+        error={error}
         {...rest}
       />
+
+      <HelperText type="error" visible={error || !!helperText} padding="none" {...helperTextProps}>
+        {helperText}
+      </HelperText>
     </View>
   );
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextInput } from 'react-native-paper';
 
 import { useAppTheme } from '@/assets';
@@ -6,23 +6,31 @@ import { useAppTheme } from '@/assets';
 import AppTextFormInput from '../appTextInput/AppTextFormInput';
 import { AppTextFormInputProps } from '../appTextInput/AppTextInput.type';
 
-const EmailTextInput = (props: Omit<AppTextFormInputProps, 'right' | 'keyboardType'>) => {
+const PasswordInput = (props: Omit<AppTextFormInputProps, 'right' | 'keyboardType'>) => {
   const { mode = 'flat', ...rest } = props;
+
+  const [secureText, setSecureText] = useState(true);
   const { colors } = useAppTheme();
+
+  const togglePassword = () => {
+    setSecureText(!secureText);
+  };
 
   return (
     <AppTextFormInput
       autoCapitalize="none"
       mode={mode}
-      label="Email"
-      placeholder="Email"
-      keyboardType="email-address"
+      label="Password"
+      placeholder="Password"
+      keyboardType="visible-password"
+      secureTextEntry={secureText}
       right={
         <TextInput.Icon
-          icon="email-outline"
+          icon={secureText ? 'eye-off' : 'eye'}
           size={20}
           style={{ ...(mode === 'flat' && { right: -16 }) }}
           color={isFocused => (isFocused ? colors.primary : colors.onBackground)}
+          onPress={togglePassword}
         />
       }
       {...rest}
@@ -30,4 +38,4 @@ const EmailTextInput = (props: Omit<AppTextFormInputProps, 'right' | 'keyboardTy
   );
 };
 
-export default EmailTextInput;
+export default PasswordInput;

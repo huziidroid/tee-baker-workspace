@@ -26,6 +26,17 @@ export const useLoginOptionButtonStyles = () => {
       label: {
         width: '55%',
       },
+
+      onlyIconView: {
+        // flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 50,
+        width: 80,
+        borderWidth: 0.4,
+        borderRadius: 50,
+        borderColor: colors.outline,
+      },
     }),
   );
 };

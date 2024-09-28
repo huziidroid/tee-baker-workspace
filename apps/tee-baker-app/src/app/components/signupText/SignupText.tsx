@@ -6,10 +6,10 @@ import { NavigationService } from '@/services';
 
 import { useStyles } from '@/styles';
 
-import Spacer from '../common/Spacer';
+import Spacer, { ISpacerProps } from '../common/Spacer';
 import AppText from '../common/appText/AppText';
 
-const SignupText = () => {
+const SignupText = (props: ISpacerProps) => {
   const styles = useStyles();
 
   const onPressSignup = () => {
@@ -17,7 +17,7 @@ const SignupText = () => {
   };
 
   return (
-    <Spacer top={40} style={styles.alignCenter}>
+    <Spacer top={40} style={styles.alignCenter} {...props}>
       <AppText size={14}>
         Don't have an account?{' '}
         <Spacer top={-2}>

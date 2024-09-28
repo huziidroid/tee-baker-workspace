@@ -8,7 +8,6 @@ export const useLandingStyles = () => {
       content: {
         flex: 1,
         paddingTop: 50,
-        paddingHorizontal: 20,
         alignItems: 'center',
       },
       loginOptionContainer: {
@@ -16,8 +15,6 @@ export const useLandingStyles = () => {
         width: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
-
-        // backgroundColor: 'red',
       },
     }),
   );

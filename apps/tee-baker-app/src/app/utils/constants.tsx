@@ -1,4 +1,8 @@
+import { Platform } from 'react-native';
+
 import { AppleIcon, FacebookIcon, GoogleIcon, TwitterIcon } from '@/components/svgIcons';
+
+export const isIOS = Platform.OS === 'ios';
 
 export const LOGIN_OPTIONS = [
   {

@@ -8,6 +8,7 @@ export const makeStyles = (colors: ReactNativePaper.ThemeColors) =>
     flex1: { flex: 1 },
     row: { flexDirection: 'row', alignItems: 'center' },
     alignCenter: { alignItems: 'center' },
+    selfCenter: { alignSelf: 'center' },
   });
 
 export const useGlobalStyles = () => {

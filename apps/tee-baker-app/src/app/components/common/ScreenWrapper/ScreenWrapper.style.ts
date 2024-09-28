@@ -14,6 +14,7 @@ export const useScreenWrapperStyles = ({ color }: { color: ReactNativePaper.Them
   return useStyles(
     StyleSheet.create({
       view: { flex: 1, backgroundColor },
+      horizontalSpacing: { paddingHorizontal: 16 },
       scroll: { backgroundColor },
       left: { paddingLeft: left },
       right: { paddingRight: right },

@@ -6,3 +6,7 @@ export { default as EmailTextInput } from './formComponents/emailInput/EmailText
 export { default as ScreenWrapper } from './common/ScreenWrapper/ScreenWrapper';
 export { default as LoginOptionButton } from './loginOptionButton/LoginOptionButton';
 export { default as SignupText } from './signupText/SignupText';
+export { default as AppCheckbox } from './formComponents/checkbox/Checkbox';
+export { default as PasswordInput } from './formComponents/passwordInput/PasswordInput';
+export { default as AppTextFormInput } from './formComponents/appTextInput/AppTextFormInput';
+export { default as AppCheckboxFormInput } from './formComponents/checkbox/CheckboxFormInput';

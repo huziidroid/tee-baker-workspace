@@ -13,7 +13,7 @@ interface AppNavigationContainerProps {
 const AppNavigationContainer = (props: AppNavigationContainerProps) => {
   const { theme } = props;
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   return (
     <NavigationContainer ref={NavigationService.navigationRef} theme={theme}>
