@@ -20,7 +20,19 @@
     "react-native-safe-area-context": "^4.11.0",
     "react-native-screens": "^3.34.0",
     "react-native-svg": "15.3.0",
-    "react-native-vector-icons": "^10.1.0"
+    "react-native-vector-icons": "^10.1.0",
+    "shared-utils": "*",
+    "tslib": "*",
+    "ramda": "*",
+    "react-if": "*",
+    "react-hook-form": "*",
+    "@hookform/resolvers": "*",
+    "yup": "*",
+    "react-dom": "*",
+    "@nx/vite": "*",
+    "@vitejs/plugin-react": "*",
+    "esbuild": "*",
+    "vite": "*"
   },
   "devDependencies": {
     "@nx/react-native": "19.7.2",

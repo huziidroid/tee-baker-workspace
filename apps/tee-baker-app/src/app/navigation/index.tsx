@@ -3,8 +3,8 @@ import React from 'react';
 
 import { NavigationService } from '@/services';
 
-import AppNavigator from './AppNavigator';
-import AuthNavigator from './AuthNavigator';
+import AppNavigator from './app-navigator';
+import AuthNavigator from './auth-navigator';
 
 interface AppNavigationContainerProps {
   theme?: Theme;

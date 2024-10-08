@@ -1,3 +1,3 @@
-export { default as NavigationService } from './navigationService/NavigationService';
-export { default as AsyncStorageService } from './storageService/AsyncStorageService';
-export { default as KeychainService } from './storageService/KeychainService';
+export { default as NavigationService } from './navigation-service/navigation-service';
+export { default as AsyncStorageService } from './storage-service/async-storage-service';
+export { default as KeychainService } from './storage-service/key-chain-service';

@@ -1,3 +1,3 @@
 export const APP_IMAGES = {
-  appLogo: require('./appLogo.png'),
+  appLogo: require('./app-logo.png'),
 };

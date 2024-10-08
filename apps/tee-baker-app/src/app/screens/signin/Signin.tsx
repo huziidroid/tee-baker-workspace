@@ -9,10 +9,10 @@ import { AppButton, AppCheckboxFormInput, AppText, EmailTextInput, LoginOptionBu
 
 import { LOGIN_OPTIONS, SigninSchema } from '@/utils';
 
-import { useSiginStyles } from './Signin.style';
-import { SigninFormType } from './Signin.type';
-import ContinueWithLabel from './components/ContinueWithLabel';
-import ForgotPasswordText from './components/ForgotPasswordText';
+import ContinueWithLabel from './components/continue-with-label';
+import ForgotPasswordText from './components/forgot-password-text';
+import { useSiginStyles } from './signin.style';
+import { SigninFormType } from './signin.type';
 
 const SigninScreen = () => {
   const styles = useSiginStyles();

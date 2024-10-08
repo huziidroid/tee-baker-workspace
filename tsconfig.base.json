@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      // "@tee-baker-app/*": ["apps/tee-baker-app/src/*"],
-      // "@tee-baker-server/*": ["apps/tee-baker-server/src/*"],
-      // "@tee-baker-web/*": ["apps/tee-baker-web/src/*"]
+      "shared-utils": ["packages/shared-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

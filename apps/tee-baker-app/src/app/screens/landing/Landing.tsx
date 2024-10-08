@@ -12,7 +12,7 @@ import { NavigationService } from '@/services';
 
 import { LOGIN_OPTIONS } from '@/utils';
 
-import { useLandingStyles } from './Landing.style';
+import { useLandingStyles } from './landing.style';
 
 const LandingScreen = () => {
   const styles = useLandingStyles();
