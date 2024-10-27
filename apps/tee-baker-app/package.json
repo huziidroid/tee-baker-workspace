@@ -32,7 +32,9 @@
     "@nx/vite": "*",
     "@vitejs/plugin-react": "*",
     "esbuild": "*",
-    "vite": "*"
+    "vite": "*",
+    "i18next": "*",
+    "react-i18next": "*"
   },
   "devDependencies": {
     "@nx/react-native": "19.7.2",

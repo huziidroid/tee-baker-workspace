@@ -22,11 +22,7 @@ const SigninScreen = () => {
     handleSubmit,
     formState: { isDirty, isValid },
   } = useForm({
-    defaultValues: {
-      email: '',
-      password: '',
-      rememberMe: { checked: false },
-    },
+    defaultValues: { email: '', password: '', rememberMe: { checked: false } },
     mode: 'onChange',
     resolver: yupResolver(SigninSchema),
   });

@@ -8,6 +8,7 @@ import { AppDarkTheme, AppLightTheme } from '@/assets';
 
 import AppNavigationContainer from './navigation';
 
+// enables paper theme configuration with react-native navigation
 const { DarkTheme, LightTheme } = adaptNavigationTheme({ reactNavigationDark: NavigationDarkTheme, reactNavigationLight: NavigationLightTheme });
 
 LogBox.ignoreLogs(['A props object containing a "key" prop is being spread into JSX']);

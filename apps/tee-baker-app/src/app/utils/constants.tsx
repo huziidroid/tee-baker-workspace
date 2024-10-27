@@ -4,6 +4,12 @@ import { AppleIcon, FacebookIcon, GoogleIcon, TwitterIcon } from '@/components/s
 
 export const isIOS = Platform.OS === 'ios';
 
+export const APP_LANGUAGE_KEY = '@APP_LANGUAGE';
+export const APP_LANGUAGES = {
+  ENGLISH: 'en',
+  FRENCH: 'fr',
+};
+
 export const LOGIN_OPTIONS = [
   {
     label: 'Continue with Google',
