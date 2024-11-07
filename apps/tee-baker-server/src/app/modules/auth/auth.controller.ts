@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
 
-import { Public } from '@shared/decorators';
+import { Public, ResponseMessage } from '@shared/decorators';
 
 import { AuthService } from './auth.service';
 import { LoginDTO } from './dtos/login.dto';
@@ -12,13 +12,16 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('login')
+  @ResponseMessage('Logged In Successfully')
   async login(@Body() body: LoginDTO) {
     const accessToken = await this.authService.login(body);
     return { accessToken };
   }
 
   @Post('register')
-  register(@Body() body: RegisterDTO) {
-    return this.authService.register(body);
+  @ResponseMessage('Registered Successfully')
+  async register(@Body() body: RegisterDTO) {
+    const accessToken = await this.authService.register(body);
+    return { accessToken };
   }
 }

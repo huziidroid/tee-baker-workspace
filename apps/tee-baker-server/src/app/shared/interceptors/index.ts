@@ -1,2 +1,2 @@
-export { Response, ResponseFormatInterceptor } from './ResponseFormatInterceptor';
+export { ApiResponse, ResponseFormatInterceptor } from './ResponseFormatInterceptor';
 export { SerializeInterceptor } from './SerializeInterceptor';
