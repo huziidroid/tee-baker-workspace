@@ -30,4 +30,9 @@ export class AuthService {
 
     return accessToken;
   }
+
+  async verifySession(id: string) {
+    const user = await this.userService.findOneById(id);
+    return user;
+  }
 }

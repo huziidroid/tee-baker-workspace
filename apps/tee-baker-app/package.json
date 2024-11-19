@@ -34,7 +34,10 @@
     "esbuild": "*",
     "vite": "*",
     "i18next": "*",
-    "react-i18next": "*"
+    "react-i18next": "*",
+    "axios": "*",
+    "zustand": "*",
+    "@tanstack/react-query": "*"
   },
   "devDependencies": {
     "@nx/react-native": "19.7.2",

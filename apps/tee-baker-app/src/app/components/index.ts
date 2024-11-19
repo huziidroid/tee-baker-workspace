@@ -10,3 +10,4 @@ export { default as AppCheckbox } from './form-components/checkbox/checkbox';
 export { default as PasswordInput } from './form-components/password-input/password-input';
 export { default as AppTextFormInput } from './form-components/app-text-input/app-text-form-input';
 export { default as AppCheckboxFormInput } from './form-components/checkbox/checkbox-form-input';
+export { default as AppLoader } from './common/app-loader/app-loader';

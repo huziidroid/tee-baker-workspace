@@ -1,8 +1,10 @@
 import { DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationLightTheme } from '@react-navigation/native';
+import { QueryClientProvider } from '@tanstack/react-query';
 import React, { useMemo } from 'react';
 import { LogBox, useColorScheme } from 'react-native';
 import { PaperProvider, adaptNavigationTheme } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ReactQueryClient } from 'shared-utils';
 
 import { AppDarkTheme, AppLightTheme } from '@/assets';
 
@@ -21,11 +23,13 @@ const App = () => {
   const navigationTheme = useMemo(() => (isDark ? DarkTheme : LightTheme), [isDark]);
 
   return (
-    <SafeAreaProvider>
-      <PaperProvider theme={paperTheme}>
-        <AppNavigationContainer theme={navigationTheme} />
-      </PaperProvider>
-    </SafeAreaProvider>
+    <QueryClientProvider client={ReactQueryClient}>
+      <SafeAreaProvider>
+        <PaperProvider theme={paperTheme}>
+          <AppNavigationContainer theme={navigationTheme} />
+        </PaperProvider>
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 };
 

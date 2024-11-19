@@ -3,7 +3,7 @@
  * This is only a minimal backend to get started.
  */
 import { Logger, ValidationPipe } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 import { ResponseFormatInterceptor } from '@shared/interceptors';
@@ -18,7 +18,7 @@ async function bootstrap() {
   app
     .use(new RequestLoggerMiddleware().use)
     .useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }))
-    .useGlobalInterceptors(new ResponseFormatInterceptor())
+    .useGlobalInterceptors(new ResponseFormatInterceptor(new Reflector()))
     .setGlobalPrefix(GLOBAL_PREFIX);
 
   // Swagger docs setup
