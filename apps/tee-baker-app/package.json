@@ -37,7 +37,8 @@
     "react-i18next": "*",
     "axios": "*",
     "zustand": "*",
-    "@tanstack/react-query": "*"
+    "@tanstack/react-query": "*",
+    "react-utils": "*"
   },
   "devDependencies": {
     "@nx/react-native": "19.7.2",

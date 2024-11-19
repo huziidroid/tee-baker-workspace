@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "shared-utils": ["packages/shared-utils/src/index.ts"]
+      "shared-utils": ["packages/shared-utils/src/index.ts"],
+      "react-utils": ["packages/react-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

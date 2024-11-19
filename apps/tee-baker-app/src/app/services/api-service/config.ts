@@ -1,5 +1,5 @@
 import { BASE_URL } from '@env';
-import { AxiosClient } from 'shared-utils';
+import { AxiosClient } from 'react-utils';
 
 import { KeychainService } from '..';
 
