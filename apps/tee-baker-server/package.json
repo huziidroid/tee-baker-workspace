@@ -20,7 +20,7 @@
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.0.2",
     "@nestjs/swagger": "^7.4.1",
-    "@prisma/client": "^5.19.1",
+    "@prisma/client": "^6.1.0",
     "argon2": "^0.41.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
@@ -28,7 +28,8 @@
     "passport-jwt": "^4.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
-    "shared-utils": "*"
+    "shared-utils": "*",
+    "unique-username-generator": "^1.4.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.4.5",
@@ -39,7 +40,7 @@
     "@nx/webpack": "19.7.2",
     "@types/passport-jwt": "^4.0.1",
     "jest-environment-node": "^29.7.0",
-    "prisma": "^5.19.1",
+    "prisma": "^6.1.0",
     "webpack-cli": "^5.1.4"
   }
 }

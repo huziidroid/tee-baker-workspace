@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, Req } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
+import { IAccessTokenResponse, IAuthSessionResponse } from 'shared-utils';
 
 import { Public, ResponseMessage } from '@shared/decorators';
 
@@ -15,25 +16,25 @@ export class AuthController {
 
   @Get('verify-session')
   @ResponseMessage('Session is verified')
-  async verifySession(@Req() req: Request) {
+  async verifySession(@Req() req: Request): Promise<IAuthSessionResponse> {
     const userId = req?.user?.userId;
-    const userMeta = await this.authService.verifySession(userId);
-    return { userMeta };
+    const user_meta = await this.authService.verifySession(userId);
+    return { user_meta };
   }
 
   @Public()
   @Post('login')
   @ResponseMessage('Logged In Successfully!')
-  async login(@Body() body: LoginDTO) {
-    const accessToken = await this.authService.login(body);
-    return { accessToken };
+  async login(@Body() body: LoginDTO): Promise<IAccessTokenResponse> {
+    const access_token = await this.authService.login(body);
+    return { access_token };
   }
 
   @Public()
   @Post('register')
   @ResponseMessage('Registered Successfully!')
-  async register(@Body() body: RegisterDTO) {
-    const accessToken = await this.authService.register(body);
-    return { accessToken };
+  async register(@Body() body: RegisterDTO): Promise<IAccessTokenResponse> {
+    const access_token = await this.authService.register(body);
+    return { access_token };
   }
 }

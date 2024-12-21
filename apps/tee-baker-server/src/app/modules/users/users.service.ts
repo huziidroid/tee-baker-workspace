@@ -6,6 +6,7 @@ import { PrismaService } from '@modules/prisma/prisma.service';
 import { SecurityService } from '@shared/modules/security.service';
 
 import { CreateUserDTO } from './dtos/createUser.dto';
+import { UpdateUserDto } from './dtos/updateUser.dto';
 import { USER_MODULE_ERRORS } from './utils/errorMessages';
 
 @Injectable()
@@ -61,8 +62,19 @@ export class UsersService {
     }
   }
 
-  async updateUser() {
-    //
+  async updateUser(id: string, body: UpdateUserDto) {
+    try {
+      // find user by id
+      await this.prismaService.user.findFirstOrThrow({ where: { id: id } });
+
+      const updatedUser = this.prismaService.user.update({ data: body, where: { id: id } });
+      return updatedUser;
+    } catch (error) {
+      if (error instanceof PrismaClientKnownRequestError && error.code === 'P2025') {
+        throw new NotFoundException(USER_MODULE_ERRORS.userNotFoundById(id));
+      }
+      throw new InternalServerErrorException(error);
+    }
   }
 
   async deleteUser(id: string) {

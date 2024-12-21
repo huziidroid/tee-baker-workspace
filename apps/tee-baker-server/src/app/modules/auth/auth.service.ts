@@ -1,5 +1,6 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import * as R from 'ramda';
+import { generateRandomUsername } from 'shared-utils';
 
 import { UsersService } from '@modules/users/users.service';
 
@@ -24,8 +25,16 @@ export class AuthService {
   }
 
   async register(body: RegisterDTO) {
-    const userCreated = await this.userService.createUser(R.pickAll(['full_name', 'user_name', 'email', 'dob', 'password', 'gender'], body));
+    const payload = R.pickAll(['full_name', 'email', 'password'], body);
 
+    // generate random username based on email
+    const userName = generateRandomUsername(payload?.email);
+    const payloadWithEmail = { ...payload, user_name: userName };
+
+    // create user in db
+    const userCreated = await this.userService.createUser(payloadWithEmail);
+
+    // generate access token
     const accessToken = await this.securityService.createAccessToken(userCreated.id, userCreated.email);
 
     return accessToken;

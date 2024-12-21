@@ -6,13 +6,10 @@ import { CreateUserDTO } from '@modules/users/dtos/createUser.dto';
 
 import { MatchPassword } from '@shared/validators';
 
-export class RegisterDTO
-  extends PickType(CreateUserDTO, ['full_name', 'user_name', 'email', 'gender', 'dob', 'password'] as const)
-  implements IRegisterUser
-{
+export class RegisterDTO extends PickType(CreateUserDTO, ['full_name', 'email', 'password'] as const) implements IRegisterUser {
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
   @MatchPassword('password')
-  confirmPassword: string;
+  confirm_password: string;
 }
