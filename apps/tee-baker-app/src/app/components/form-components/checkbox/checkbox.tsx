@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 import { Checkbox } from 'react-native-paper';
 
 import AppText from '@/components/common/app-text/app-text';
@@ -9,7 +9,7 @@ import { useCheckboxStyles } from './checkbox.style';
 import { AppCheckboxProps } from './checkbox.type';
 
 const AppCheckbox = (props: AppCheckboxProps) => {
-  const { label, checked, indeterminate = false, onChange, appTextProps, ...rest } = props;
+  const { label, prefixText, checked, indeterminate = false, onChange, labelProps, prefixTextProps, ...rest } = props;
 
   const styles = useCheckboxStyles();
 
@@ -23,17 +23,24 @@ const AppCheckbox = (props: AppCheckboxProps) => {
   };
 
   return (
-    <Pressable style={styles.content} onPress={onPressCheckbox}>
+    <View style={styles.content}>
       <View style={styles.checboxContainer}>
         <Checkbox.Android {...rest} status={status} onPress={onPressCheckbox} />
       </View>
 
       <Spacer style={styles.selfCenter} left={30}>
-        <AppText size={14} {...appTextProps}>
-          {label}
-        </AppText>
+        <View style={styles.row}>
+          {prefixText && (
+            <AppText size={14} color="onBackground" {...prefixTextProps}>
+              {prefixText}
+            </AppText>
+          )}
+          <AppText size={14} {...labelProps}>
+            {label}
+          </AppText>
+        </View>
       </Spacer>
-    </Pressable>
+    </View>
   );
 };
 

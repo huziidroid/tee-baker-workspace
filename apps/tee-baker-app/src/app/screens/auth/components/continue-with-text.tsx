@@ -4,13 +4,13 @@ import { Divider } from 'react-native-paper';
 
 import { AppText, Spacer } from '@/components';
 
-import { useSiginStyles } from '../signin.style';
+import { useAuthStyles } from '../styles';
 
-const ContinueWithLabel = () => {
-  const styles = useSiginStyles();
+const ContinueWithText = () => {
+  const styles = useAuthStyles();
 
   return (
-    <View style={[styles.row, styles.contentSpacing]}>
+    <View style={styles.row}>
       <Divider style={styles.flex1} />
       <Spacer horizontal={20}>
         <AppText size={14} variant="thin">
@@ -22,4 +22,4 @@ const ContinueWithLabel = () => {
   );
 };
 
-export default ContinueWithLabel;
+export default ContinueWithText;

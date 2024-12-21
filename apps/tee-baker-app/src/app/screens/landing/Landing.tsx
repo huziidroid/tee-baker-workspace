@@ -2,7 +2,7 @@ import { APP_NAME } from '@env';
 import React from 'react';
 import { View } from 'react-native';
 
-import { AppButton, AppText, LoginOptionButton, ScreenWrapper, SignupText, Spacer } from '@/components';
+import { AppButton, AppText, AuthenticationCTA, LoginOptionButton, ScreenWrapper, Spacer } from '@/components';
 
 import { AppIcon } from '@/icons';
 
@@ -19,6 +19,10 @@ const LandingScreen = () => {
 
   const onPressLoginWithPassword = () => {
     NavigationService.navigate(SCREENS.SING_IN);
+  };
+
+  const goToSignupScreen = () => {
+    NavigationService.navigate(SCREENS.SIGN_UP);
   };
 
   return (
@@ -43,7 +47,7 @@ const LandingScreen = () => {
 
       <Spacer horizontal={20} flex={0.25}>
         <AppButton title="Sign in with password" mode="contained" onPress={onPressLoginWithPassword} />
-        <SignupText />
+        <AuthenticationCTA top={40} label="Don't have an account?" cta={{ label: 'Signup', onPress: goToSignupScreen }} />
       </Spacer>
     </ScreenWrapper>
   );

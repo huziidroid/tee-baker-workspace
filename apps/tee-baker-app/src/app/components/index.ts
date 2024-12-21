@@ -5,9 +5,15 @@ export { default as AppTextInput } from './form-components/app-text-input/app-te
 export { default as EmailTextInput } from './form-components/email-input/email-text-input';
 export { default as ScreenWrapper } from './common/screen-wrapper/screen-wrapper';
 export { default as LoginOptionButton } from './login-option-button/login-option-button';
-export { default as SignupText } from './signup-text/signup-text';
+export { default as AuthenticationCTA } from './authentication-cta/authentication-cta';
 export { default as AppCheckbox } from './form-components/checkbox/checkbox';
 export { default as PasswordInput } from './form-components/password-input/password-input';
 export { default as AppTextFormInput } from './form-components/app-text-input/app-text-form-input';
 export { default as AppCheckboxFormInput } from './form-components/checkbox/checkbox-form-input';
 export { default as AppLoader } from './common/app-loader/app-loader';
+export { default as AppAvatar, type IAppAvatarProps } from './common/app-avatar/app-avatar';
+export { default as AppSelect } from './form-components/app-select/app-select';
+export { default as AppFormSelect } from './form-components/app-select/app-form-select';
+export { default as AppDatePickerInput } from './form-components/app-date-picker-input/app-date-picker-input';
+export { default as AppDatePickerFormInput } from './form-components/app-date-picker-input/app-date-picker-form-input';
+export { default as PhoneInput } from './form-components/phone-input/phone-input';

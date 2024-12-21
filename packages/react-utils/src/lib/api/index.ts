@@ -4,6 +4,7 @@ export { AxiosClient } from './base/axios-base/axios-config';
 export { API_URLS } from './base/api-urls/api-urls';
 export { useErrorHandler } from './base/handlers/error-handler';
 export { useLoadingHandler } from './base/handlers/loading-handler';
+export { useSessionHandler } from './base/handlers/session-handler';
 export {
   type InfiniteQueryResponse,
   type MutationArgs,

@@ -9,7 +9,7 @@ export const useCheckboxStyles = () => {
         flexDirection: 'row',
         height: 45,
       },
-      checboxContainer: { left: -9, position: 'absolute', zIndex: 1, alignSelf: 'center', right: 0 },
+      checboxContainer: { left: -9, position: 'absolute', alignSelf: 'center', right: 0 },
     }),
   );
 };

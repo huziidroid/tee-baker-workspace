@@ -11,6 +11,7 @@ interface IScreenWrapperProps {
   keyboardAwareScrollViewProps?: KeyboardAwareScrollViewProps;
   backgroundColor?: ReactNativePaper.ThemeColorsKeys;
   safeAreaInsets?: { left?: boolean; right?: boolean; top?: boolean; bottom?: boolean };
+  horizontalSpacing?: number;
 }
 
 const ScreenWrapper = (props: PropsWithChildren<IScreenWrapperProps>) => {
@@ -21,10 +22,11 @@ const ScreenWrapper = (props: PropsWithChildren<IScreenWrapperProps>) => {
     type = 'none',
     viewProps,
     children,
+    horizontalSpacing = 16,
     safeAreaInsets = { top: false, bottom: false, left: false, right: false },
   } = props;
 
-  const styles = useScreenWrapperStyles({ color: backgroundColor });
+  const styles = useScreenWrapperStyles({ color: backgroundColor, horizontalSpacing });
 
   const safeAreaStyles = useMemo(
     () =>

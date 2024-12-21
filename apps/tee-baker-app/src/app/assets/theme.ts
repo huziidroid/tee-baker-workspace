@@ -71,6 +71,7 @@ export const AppLightTheme = {
     surfaceDisabled: 'rgba(28, 27, 31, 0.12)',
     onSurfaceDisabled: 'rgba(28, 27, 31, 0.38)',
     backdrop: 'rgba(49, 47, 56, 0.4)',
+    white: 'rgb(255, 255, 255)',
   },
   fonts: fontsConfigurations,
 };
@@ -78,7 +79,7 @@ export const AppLightTheme = {
 export const AppDarkTheme = {
   ...MD3DarkTheme,
   colors: {
-    primary: 'rgb(200, 191, 255)',
+    primary: 'rgb(91, 55, 241)',
     onPrimary: 'rgb(45, 0, 157)',
     primaryContainer: 'rgb(66, 0, 218)',
     onPrimaryContainer: 'rgb(229, 222, 255)',
@@ -106,7 +107,7 @@ export const AppDarkTheme = {
     scrim: 'rgb(0, 0, 0)',
     inverseSurface: 'rgb(229, 225, 230)',
     inverseOnSurface: 'rgb(49, 48, 51)',
-    inversePrimary: 'rgb(91, 55, 241)',
+    inversePrimary: 'rgb(200, 191, 255)',
     elevation: {
       level0: 'transparent',
       level1: 'rgb(37, 35, 42)',
@@ -118,6 +119,7 @@ export const AppDarkTheme = {
     surfaceDisabled: 'rgba(229, 225, 230, 0.12)',
     onSurfaceDisabled: 'rgba(229, 225, 230, 0.38)',
     backdrop: 'rgba(49, 47, 56, 0.4)',
+    white: 'rgb(255, 255, 255)',
   },
   fonts: fontsConfigurations,
 };

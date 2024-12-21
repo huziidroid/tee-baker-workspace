@@ -87,5 +87,14 @@
 		<string>Poppins-Thin.ttf</string>
 		<string>Poppins-ThinItalic.ttf</string>
 	</array>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Tee Baker requires access to your photo library to upload and manage photos.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Tee Baker requires access to your camera to take pictures and videos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>Tee Baker requires access to your microphone to record audio during video capture.</string>
+
+
 </dict>
 </plist>

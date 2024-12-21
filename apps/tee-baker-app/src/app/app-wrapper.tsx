@@ -1,6 +1,5 @@
 import { DarkTheme as NavigationDarkTheme, DefaultTheme as NavigationLightTheme } from '@react-navigation/native';
 import React, { useMemo } from 'react';
-import { useColorScheme } from 'react-native';
 import { Snackbar, adaptNavigationTheme } from 'react-native-paper';
 import { useErrorHandler, useLoadingHandler } from 'react-utils';
 import { isEmptyOrNil } from 'shared-utils';
@@ -8,6 +7,7 @@ import { isEmptyOrNil } from 'shared-utils';
 import { AppLoader } from './components';
 import AppNavigationContainer from './navigation';
 import { useVerifySession } from './services';
+import { useIsDarkTheme } from './utils';
 
 // enables paper theme configuration with react-native navigation
 const { DarkTheme, LightTheme } = adaptNavigationTheme({ reactNavigationDark: NavigationDarkTheme, reactNavigationLight: NavigationLightTheme });
@@ -17,8 +17,7 @@ const AppWrapper = () => {
 
   const { error, dispatch } = useErrorHandler();
   const { isLoading } = useLoadingHandler();
-  const colorScheme = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const isDark = useIsDarkTheme();
 
   const navigationTheme = useMemo(() => (isDark ? DarkTheme : LightTheme), [isDark]);
 

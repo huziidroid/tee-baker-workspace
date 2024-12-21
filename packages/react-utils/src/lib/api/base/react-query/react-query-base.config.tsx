@@ -11,6 +11,7 @@ const onError = (error: Error) => {
     const errorResponse = (error as AxiosError<QueryErrorResponse>)?.response?.data;
     if (errorResponse) useErrorHandler.setState(() => ({ error: errorResponse }));
     else useErrorHandler.setState(() => ({ error: { error: 'error', message: error?.message, statusCode: error?.status } }));
+    return;
   }
 };
 const ReactQueryClient = new QueryClient({

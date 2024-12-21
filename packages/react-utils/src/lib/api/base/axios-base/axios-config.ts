@@ -13,7 +13,7 @@ export class AxiosClient {
     this.axiosInstance.interceptors.request.use(
       async config => {
         const tokenToAttach = typeof token === 'function' ? await token() : token;
-        if (tokenToAttach) config.headers['Authorization'] = `Bearer ${token}`;
+        if (tokenToAttach) config.headers['Authorization'] = `Bearer ${tokenToAttach}`;
         return config;
       },
       error => {

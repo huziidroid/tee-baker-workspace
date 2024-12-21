@@ -5,9 +5,9 @@ export interface AppTextInputProps extends TextInputProps {
   flex?: number;
   width?: number;
   isRequired?: boolean;
-
   helperText?: string;
   helperTextProps?: HelperTextProps;
+  rows?: number;
 }
 
 export interface AppTextFormInputProps extends Omit<AppTextInputProps, 'value' | 'onChangeText' | 'helperText' | 'error'> {

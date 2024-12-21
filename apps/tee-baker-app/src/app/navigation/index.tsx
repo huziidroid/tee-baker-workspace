@@ -1,5 +1,7 @@
 import { NavigationContainer, Theme } from '@react-navigation/native';
 import React from 'react';
+import { useSessionHandler } from 'react-utils';
+import { isEmptyOrNil } from 'shared-utils';
 
 import { NavigationService } from '@/services';
 
@@ -12,8 +14,8 @@ interface AppNavigationContainerProps {
 
 const AppNavigationContainer = (props: AppNavigationContainerProps) => {
   const { theme } = props;
-
-  const isAuthenticated = false;
+  const { session, isNewUser } = useSessionHandler();
+  const isAuthenticated = !isEmptyOrNil(session) && !isNewUser;
 
   return (
     <NavigationContainer ref={NavigationService.navigationRef} theme={theme}>

@@ -11,7 +11,9 @@ export type IconType =
   | 'AntDesign'
   | 'Octicons'
   | 'FontAwesome5'
-  | 'SimpleLineIcons';
+  | 'FontAwesome6'
+  | 'SimpleLineIcons'
+  | 'EvilIcons';
 
 export type VectorIconType = {
   iconType: IconType;
@@ -28,3 +30,5 @@ export type BottomTabConfigType = {
   component: () => JSX.Element;
   icon: { type: IconType; name: string };
 };
+
+export type StandardPhotoType = { uri: string; type: string; name: string };

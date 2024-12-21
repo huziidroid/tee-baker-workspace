@@ -5,7 +5,7 @@ import { useAppTheme } from '@/assets';
 
 import { useStyles } from '@/styles';
 
-export const useScreenWrapperStyles = ({ color }: { color: ReactNativePaper.ThemeColorsKeys }) => {
+export const useScreenWrapperStyles = ({ color, horizontalSpacing }: { color: ReactNativePaper.ThemeColorsKeys; horizontalSpacing: number }) => {
   const { colors } = useAppTheme();
   const { bottom, left, right, top } = useSafeAreaInsets();
 
@@ -14,7 +14,7 @@ export const useScreenWrapperStyles = ({ color }: { color: ReactNativePaper.Them
   return useStyles(
     StyleSheet.create({
       view: { flex: 1, backgroundColor },
-      horizontalSpacing: { paddingHorizontal: 16 },
+      horizontalSpacing: { paddingHorizontal: horizontalSpacing },
       scroll: { backgroundColor },
       left: { paddingLeft: left },
       right: { paddingRight: right },

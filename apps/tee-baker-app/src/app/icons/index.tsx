@@ -2,9 +2,11 @@ import React from 'react';
 import { Image, ImageProps } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import FontAwesome5, { Omit } from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import Foundation from 'react-native-vector-icons/Foundation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -36,6 +38,8 @@ const VectorIcon = (props: VectorIconType) => {
       return <FontAwesome color={onBackground} {...rest} />;
     case 'FontAwesome5':
       return <FontAwesome5 color={onBackground} {...rest} />;
+    case 'FontAwesome6':
+      return <FontAwesome6 color={onBackground} {...rest} />;
     case 'Foundation':
       return <Foundation color={onBackground} {...rest} />;
     case 'Ionicons':
@@ -48,12 +52,19 @@ const VectorIcon = (props: VectorIconType) => {
       return <Octicons color={onBackground} {...rest} />;
     case 'SimpleLineIcons':
       return <SimpleLineIcons color={onBackground} {...rest} />;
+    case 'EvilIcons':
+      return <EvilIcons color={onBackground} {...rest} />;
   }
 };
 
 export default VectorIcon;
 
 export const EmailIcon = (props: SpecificIconType) => <VectorIcon iconType="Feather" name="email" {...props} />;
+export const EditIcon = (props: SpecificIconType) => <VectorIcon iconType="MaterialIcons" name="edit" {...props} />;
+export const PersonIcon = (props: SpecificIconType) => <VectorIcon iconType="FontAwesome" name="user-circle" {...props} />;
 export const AppIcon = (props: Omit<ImageIconProps, 'src' | 'source'>) => (
   <Image source={APP_IMAGES.appLogo} style={{ height: 80, width: 80 }} {...props} />
 );
+
+export const ChevronDownIcon = (props: SpecificIconType) => <VectorIcon iconType="Entypo" name="chevron-down" {...props} />;
+export const ChevronUpIcon = (props: SpecificIconType) => <VectorIcon iconType="Entypo" name="chevron-up" {...props} />;

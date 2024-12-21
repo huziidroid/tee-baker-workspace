@@ -37,6 +37,14 @@ export const getHeaderConfig = (route: string): HeaderConfigType => {
         leftAccessory: <BackAction />,
         title: '',
       };
+    case SCREENS.PERSONAL_INFO:
+      return {
+        leftAccessory: null,
+        title: '',
+      };
+    // settings
+    case SCREENS.PRIVACY_POLICY:
+      return { leftAccessory: <BackAction />, title: 'Privacy Policy' };
     default:
       return {
         leftAccessory: <BackAction />,

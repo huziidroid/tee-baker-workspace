@@ -20,7 +20,13 @@ const AppHeader = (props: BottomTabHeaderProps | NativeStackHeaderProps) => {
         {options.headerLeft ? options.headerLeft({ canGoBack: false }) : leftAccessory}
         <Appbar.Content
           title={
-            typeof title === 'string' ? (
+            options?.headerTitle ? (
+              typeof options?.headerTitle === 'string' ? (
+                options?.headerTitle
+              ) : (
+                options?.headerTitle({ children: '' })
+              )
+            ) : typeof title === 'string' ? (
               <AppText size={18} variant="bold" color="onSurfaceVariant">
                 {title}
               </AppText>

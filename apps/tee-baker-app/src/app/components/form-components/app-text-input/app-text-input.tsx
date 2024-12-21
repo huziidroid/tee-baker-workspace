@@ -5,15 +5,29 @@ import { HelperText, TextInput as PaperTextInput } from 'react-native-paper';
 
 import AppText from '@/components/common/app-text/app-text';
 
-import Spacer from '../../common/spacer';
 import { useAppTextInputStyles } from './app-text-input.style';
 import { AppTextInputProps } from './app-text-input.type';
 
 const AppTextInput = (props: AppTextInputProps) => {
-  const { flex, width, mode = 'flat', label, isRequired, error, helperText, helperTextProps, ...rest } = props;
+  const {
+    flex,
+    width,
+    mode = 'flat',
+    label,
+    isRequired,
+    error,
+    helperText,
+    helperTextProps,
+    rows = 0,
+    multiline,
+    contentStyle,
+    style,
+    outlineStyle,
+    ...rest
+  } = props;
 
   const isFlat = mode === 'flat';
-  const styles = useAppTextInputStyles({ isFlat });
+  const styles = useAppTextInputStyles({ isFlat, rows, multiline });
 
   return (
     <View style={{ flex, width }}>
@@ -30,25 +44,26 @@ const AppTextInput = (props: AppTextInputProps) => {
 
           {/* Is Required */}
           <When condition={isRequired}>
-            <Spacer top={4}>
-              <AppText variant="italic-regular" size={12} color="error">
-                *
-              </AppText>
-            </Spacer>
+            <AppText variant="italic-regular" size={12} color="error">
+              *
+            </AppText>
           </When>
         </View>
       </When>
+
       <PaperTextInput
-        style={styles.inputStyle}
-        mode={mode}
-        contentStyle={styles.contentStyle}
-        outlineStyle={styles.outlineStyle}
-        label={!isFlat ? label : ''}
-        error={error}
         {...rest}
+        style={[styles.inputStyle, style]}
+        contentStyle={[styles.contentStyle, contentStyle]}
+        outlineStyle={[styles.outlineStyle, outlineStyle]}
+        label={!isFlat ? label : ''}
+        mode={mode}
+        error={error}
+        multiline={multiline}
+        textAlignVertical={multiline ? 'top' : 'auto'}
       />
 
-      <HelperText type="error" visible={error || !!helperText} padding="none" {...helperTextProps}>
+      <HelperText type={error ? 'error' : 'info'} visible={error || !!helperText} padding="none" {...helperTextProps} style={styles.helperText}>
         {helperText}
       </HelperText>
     </View>
