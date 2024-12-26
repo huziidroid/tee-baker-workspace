@@ -9,6 +9,10 @@ export const makeStyles = (colors: ReactNativePaper.ThemeColors) =>
     row: { flexDirection: 'row', alignItems: 'center' },
     alignCenter: { alignItems: 'center' },
     selfCenter: { alignSelf: 'center' },
+    justifyBetween: { justifyContent: 'space-between' },
+    borderRadiusSm: { borderRadius: 8 },
+    borderRadiusMd: { borderRadius: 12 },
+    borderRadiusLg: { borderRadius: 16 },
   });
 
 export const useGlobalStyles = () => {

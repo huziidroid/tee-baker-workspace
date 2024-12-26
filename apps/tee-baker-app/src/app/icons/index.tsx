@@ -62,6 +62,10 @@ export default VectorIcon;
 export const EmailIcon = (props: SpecificIconType) => <VectorIcon iconType="Feather" name="email" {...props} />;
 export const EditIcon = (props: SpecificIconType) => <VectorIcon iconType="MaterialIcons" name="edit" {...props} />;
 export const PersonIcon = (props: SpecificIconType) => <VectorIcon iconType="FontAwesome" name="user-circle" {...props} />;
+export const ArrowRightIcon = (props: SpecificIconType) => <VectorIcon iconType="MaterialCommunityIcons" name="arrow-right" {...props} />;
+export const SendIcon = (props: SpecificIconType) => <VectorIcon iconType="Feather" name="send" {...props} />;
+export const AddIcon = (props: SpecificIconType) => <VectorIcon iconType="Ionicons" name="add-outline" {...props} />;
+
 export const AppIcon = (props: Omit<ImageIconProps, 'src' | 'source'>) => (
   <Image source={APP_IMAGES.appLogo} style={{ height: 80, width: 80 }} {...props} />
 );

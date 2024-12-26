@@ -32,3 +32,7 @@ export type BottomTabConfigType = {
 };
 
 export type StandardPhotoType = { uri: string; type: string; name: string };
+export type TeeStyleType = {
+  label: string;
+  styleImage: Omit<StandardPhotoType, 'type'>;
+};

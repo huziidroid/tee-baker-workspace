@@ -11,9 +11,14 @@ export { default as PasswordInput } from './form-components/password-input/passw
 export { default as AppTextFormInput } from './form-components/app-text-input/app-text-form-input';
 export { default as AppCheckboxFormInput } from './form-components/checkbox/checkbox-form-input';
 export { default as AppLoader } from './common/app-loader/app-loader';
-export { default as AppAvatar, type IAppAvatarProps } from './common/app-avatar/app-avatar';
+export { default as AppAvatar } from './common/app-avatar/app-avatar';
+export { type IAppAvatarProps } from './common/app-avatar/app-avatar.type';
 export { default as AppSelect } from './form-components/app-select/app-select';
 export { default as AppFormSelect } from './form-components/app-select/app-form-select';
 export { default as AppDatePickerInput } from './form-components/app-date-picker-input/app-date-picker-input';
 export { default as AppDatePickerFormInput } from './form-components/app-date-picker-input/app-date-picker-form-input';
 export { default as PhoneInput } from './form-components/phone-input/phone-input';
+
+// feature
+export { default as TeeCard } from './feature-components/tee-style-list/components/tee-card';
+export { default as TeeStyleList } from './feature-components/tee-style-list/tee-style-list';
